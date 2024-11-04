@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+# 读取提交信息文件的路径
+COMMIT_MSG_FILE="$1"
+
+# 使用 commitlint 校验提交信息
+pnpm exec commitlint --edit $COMMIT_MSG_FILE
+if [ $? -ne 0 ]; then
+  echo "Commit message linting failed."
+  exit 1
+fi
+
+# 定义 emoji 和 type 的映射关系
+feat="🎉"
+optimize="✨"
+fix="🔧"
+revert="⏪️"
+
+# 从提交信息中提取类型（假设格式为 "type(scope): description"）
+TYPE=$(grep -oE '^[a-z]+' $COMMIT_MSG_FILE)
+
+# 根据类型匹配 emoji 表情
+case "$TYPE" in
+  feat)     EMOJI=$feat ;;
+  optimize) EMOJI=$optimize ;;
+  fix)      EMOJI=$fix ;;
+  revert)   EMOJI=$revert ;;
+esac
+
+# 读取原始提交信息
+COMMIT_MSG=$(cat $COMMIT_MSG_FILE)
+
+# 添加 emoji 到提交信息前面
+NEW_COMMIT_MSG="$EMOJI $COMMIT_MSG"
+
+# 将更新后的提交信息写回文件
+echo "$NEW_COMMIT_MSG" > $COMMIT_MSG_FILE
