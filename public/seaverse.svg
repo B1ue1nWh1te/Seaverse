@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 640">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: url(#_未命名的渐变_11);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 30px;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_11" data-name="未命名的渐变 11" x1="491.32" y1="489.11" x2="148.68" y2="146.47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e0c3fc"/>
+      <stop offset=".3" stop-color="#e0c3fc"/>
+      <stop offset=".7" stop-color="#8ec5fc"/>
+      <stop offset="1" stop-color="#8ec5fc"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M80.79,318.6c34.05-15.55,48.28-34.62,55-49,19.31-41.31-5.53-81.92,18-107,11.57-12.33,29.03-14.72,41-15M85.21,321.4c34.05,15.55,48.28,34.62,55,49,19.31,41.31-5.53,81.92,18,107,11.57,12.33,29.03,14.72,41,15M445.21,147.6c11.97.28,29.43,2.67,41,15,23.53,25.08-1.31,65.69,18,107,6.72,14.38,20.95,33.45,55,49M440.79,492.4c11.97-.28,29.43-2.67,41-15,23.53-25.08-1.31-65.69,18-107,6.72-14.38,20.95-33.45,55-49M320,308c-6.63,0-12,5.37-12,12s5.37,12,12,12,12-5.37,12-12-5.37-12-12-12Z"/>
+</svg>

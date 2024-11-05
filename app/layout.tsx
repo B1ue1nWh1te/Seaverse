@@ -1,14 +1,9 @@
+import { metadataInfo } from "@/constants/info";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Seaverse - 海域",
-  icons: {
-    icon: "/seaverse.png",
-  },
-};
+export const metadata = metadataInfo;
 
 export default function RootLayout({
   children,

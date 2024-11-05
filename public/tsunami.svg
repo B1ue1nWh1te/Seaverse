@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 640">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: url(#_未命名的渐变_17);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 30px;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_17" data-name="未命名的渐变 17" x1="325" y1="485" x2="325" y2="155" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e0c3fc"/>
+      <stop offset=".2" stop-color="#e0c3fc"/>
+      <stop offset=".4" stop-color="#8ec5fc"/>
+      <stop offset="1" stop-color="#8ec5fc"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M121.24,470h-52.24V170h52.24M528.76,470h52.24s0-300,0-300h-52.24M517.26,230.47c-23.31,28.81-57.67,60.58-101.36,63-69.57,3.85-105.06-69.95-175.54-67-27.28,1.14-64.55,13.98-107.62,66M517.26,350.47c-23.31,28.81-57.67,60.58-101.36,63-69.57,3.85-105.06-69.95-175.54-67-27.28,1.14-64.55,13.98-107.62,66"/>
+</svg>

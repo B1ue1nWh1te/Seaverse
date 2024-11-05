@@ -1,8 +1,15 @@
 "use client";
 
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { projectsInfo } from "@/constants/constants";
-import { cn } from "@/lib/utils";
+import Ripple from "@/components/ui/ripple";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { projectsInfo } from "@/constants/info";
+import { cn, showConfetti } from "@/lib/utils";
 import { Card } from "@nextui-org/react";
 import Image from "next/image";
 import { forwardRef, useRef } from "react";
@@ -14,21 +21,30 @@ const Circle = forwardRef<
   const project = projectsInfo[projectName];
 
   return (
-    <div
-      ref={ref}
-      className={cn(
-        "z-10 flex size-16 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
-      )}
-    >
-      <Image
-        src={project.logoPath}
-        alt={project.name}
-        width={32}
-        height={32}
-        className="size-full object-contain"
-      />
-    </div>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div
+            ref={ref}
+            className={cn(
+              "z-10 flex size-16 cursor-pointer items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-110",
+              className,
+            )}
+          >
+            <Image
+              src={project.logoPath}
+              alt={project.name}
+              width={32}
+              height={32}
+              className="size-full object-contain"
+            />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{project.name}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 });
 
@@ -44,8 +60,11 @@ export default function ProjectsBeam() {
 
   return (
     <Card
-      className="relative flex h-[350px] w-[600px] items-center justify-center overflow-hidden bg-background p-10"
+      className="mx-4 my-6 flex flex-[2] items-center justify-center overflow-hidden bg-background px-14 py-12"
       ref={containerRef}
+      isBlurred={true}
+      isPressable={true}
+      onPress={showConfetti}
     >
       <Circle
         ref={middleRef}
@@ -55,39 +74,52 @@ export default function ProjectsBeam() {
       <div className="flex size-full flex-col items-stretch justify-between">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={leftTopRef} projectName="Poseidon" />
-          <Circle ref={rightTopRef} projectName="SeaEye" />
+          <Circle ref={rightTopRef} projectName="Tsunami" />
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={leftBottomRef} projectName="Trident" />
-          <Circle ref={rightBottomRef} projectName="Tsunami" />
+          <Circle ref={rightBottomRef} projectName="SeaEye" />
         </div>
       </div>
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={leftTopRef}
         toRef={middleRef}
-        curvature={-50}
+        curvature={10}
+        pathWidth={3}
+        gradientStartColor="#4facfe"
+        gradientStopColor="#00f2fe"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={leftBottomRef}
         toRef={middleRef}
-        curvature={50}
+        curvature={-10}
+        pathWidth={3}
+        gradientStartColor="#89f7fe"
+        gradientStopColor="#66a6ff"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={rightTopRef}
         toRef={middleRef}
-        curvature={-50}
+        curvature={10}
         reverse
+        pathWidth={3}
+        gradientStartColor="#a1c4fd"
+        gradientStopColor="#c2e9fb"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={rightBottomRef}
         toRef={middleRef}
-        curvature={50}
+        curvature={-10}
         reverse
+        pathWidth={3}
+        gradientStartColor="#fbc2eb"
+        gradientStopColor="#a6c1ee"
       />
+      <Ripple mainCircleSize={120} mainCircleOpacity={0.3} numCircles={2} />
     </Card>
   );
 }

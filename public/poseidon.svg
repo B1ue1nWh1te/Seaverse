@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 640">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_未命名的渐变_67);
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: url(#_未命名的渐变_67-2);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 40px;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_67" data-name="未命名的渐变 67" x1="64" y1="320" x2="576" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8ec5fc"/>
+      <stop offset=".4" stop-color="#8ec5fc"/>
+      <stop offset=".7" stop-color="#e0c3fc"/>
+      <stop offset="1" stop-color="#e0c3fc"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_67-2" data-name="未命名的渐变 67" x1="255.86" y1="387.14" x2="387.14" y2="255.86" gradientTransform="translate(320 -132.55) rotate(45)" xlink:href="#_未命名的渐变_67"/>
+  </defs>
+  <path class="cls-1" d="M340.61,95.46h0,0M320,116.07l203.93,203.93-203.93,203.93-203.93-203.93,203.93-203.93M320,64c-2.78,0-5.56,1.06-7.67,3.18l-245.15,245.15c-4.24,4.24-4.24,11.11,0,15.35l245.15,245.15c2.12,2.12,4.9,3.18,7.67,3.18s5.56-1.06,7.67-3.18l245.15-245.15c4.24-4.24,4.24-11.11,0-15.35l-245.15-245.15c-2.12-2.12-4.9-3.18-7.67-3.18h0Z"/>
+  <polygon class="cls-2" points="247.17 466.37 388.46 325.08 388.11 324.72 317.4 254.01 392.83 177.87 251.54 319.17 322.25 389.88 247.17 466.37"/>
+</svg>

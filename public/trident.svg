@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 640">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#_未命名的渐变_15);
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 30px;
+      }
+
+      .cls-2 {
+        stroke: url(#_未命名的渐变_15-2);
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_15" data-name="未命名的渐变 15" x1="320" y1="515" x2="320" y2="85" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8ec5fc"/>
+      <stop offset=".3" stop-color="#8ec5fc"/>
+      <stop offset=".45" stop-color="#b5c4fc"/>
+      <stop offset=".6" stop-color="#e0c3fc"/>
+      <stop offset="1" stop-color="#e0c3fc"/>
+    </linearGradient>
+    <linearGradient id="_未命名的渐变_15-2" data-name="未命名的渐变 15" x1="317.44" y1="508" x2="317.44" y2="103.82" xlink:href="#_未命名的渐变_15"/>
+  </defs>
+  <polygon class="cls-1" points="320 100 64 500 576 500 320 100"/>
+  <path class="cls-2" d="M320,118.82l-57,306.18,57-306.18ZM561.45,493l-270.45-210M73.42,493l333.58-120"/>
+</svg>

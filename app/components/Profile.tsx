@@ -1,20 +1,45 @@
 "use client";
 
-import { SocialLinkDock } from "@/components/SocialLinkDock";
-import { profileInfo } from "@/constants/constants";
+import { SocialLinksDock } from "@/components/SocialLinksDock";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { profileInfo } from "@/constants/info";
+import { showConfetti } from "@/lib/utils";
 import { Card, Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
+const LABELS_GRADIENT_COLORS = [
+  {
+    from: "#60a5fa",
+    via: "#a78bfa",
+    to: "#f472b6",
+  },
+  {
+    from: "#a78bfa",
+    via: "#f472b6",
+    to: "#fb923c",
+  },
+  {
+    from: "#22d3ee",
+    via: "#60a5fa",
+    to: "#a78bfa",
+  },
+];
+
 export default function Profile() {
-  const descriptionText = profileInfo.description;
+  const [currentMottoIndex, setCurrentMottoIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
+  const currentMotto = profileInfo.mottos[currentMottoIndex];
 
   useEffect(() => {
+    let typingInterval: NodeJS.Timeout;
+
     const startTypingAnimation = () => {
+      clearInterval(typingInterval);
+
       let i = 0;
-      const typingInterval = setInterval(() => {
-        if (i <= descriptionText.length) {
-          setTypedText(descriptionText.slice(0, i));
+      typingInterval = setInterval(() => {
+        if (i <= currentMotto.length) {
+          setTypedText(currentMotto.slice(0, i));
           i++;
         } else {
           clearInterval(typingInterval);
@@ -22,27 +47,60 @@ export default function Profile() {
       }, 100);
     };
 
-    const animationInterval = setInterval(startTypingAnimation, 5000);
+    const switchMotto = () => {
+      setCurrentMottoIndex((prev) => (prev + 1) % profileInfo.mottos.length);
+    };
+
+    const animationInterval = setInterval(() => {
+      switchMotto();
+      startTypingAnimation();
+    }, 6000);
+
     startTypingAnimation();
 
-    return () => clearInterval(animationInterval);
-  }, []);
+    return () => {
+      clearInterval(animationInterval);
+      clearInterval(typingInterval);
+    };
+  }, [currentMotto]);
 
   return (
-    <Card className="my-10 w-full max-w-sm bg-white/60 p-6 backdrop-blur-lg">
-      <div className="flex flex-col items-center justify-center space-y-4">
+    <Card
+      className="mx-4 my-6 flex flex-1 select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg"
+      isBlurred={true}
+      isPressable={true}
+      onPress={showConfetti}
+    >
+      <div className="flex flex-col items-center justify-center space-y-6">
         <Image
           src={profileInfo.portraitPath}
           alt="portrait"
-          width={128}
-          height={128}
-          className="rounded-full border-2 border-white/50 shadow-lg"
+          width={120}
+          height={120}
+          className="select-none rounded-full border-2 border-gray-300 shadow-large"
+          draggable={false}
         />
-        <h1 className="text-2xl font-bold text-gray-600">{profileInfo.name}</h1>
-        <p className="h-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-xl text-transparent">
+        <h1 className="select-none text-2xl font-bold text-gray-600">
+          {profileInfo.nickname}
+        </h1>
+        <div className="flex items-center justify-center space-x-1">
+          {profileInfo.labels.map((label, index) => (
+            <AnimatedGradientText key={label}>
+              <p
+                className="animate-gradient-left-to-right inline bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${LABELS_GRADIENT_COLORS[index].from}, ${LABELS_GRADIENT_COLORS[index].via}, ${LABELS_GRADIENT_COLORS[index].to})`,
+                }}
+              >
+                {label}
+              </p>
+            </AnimatedGradientText>
+          ))}
+        </div>
+        <p className="h-8 select-none bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg text-transparent">
           {typedText}
         </p>
-        <SocialLinkDock />
+        <SocialLinksDock />
       </div>
     </Card>
   );
