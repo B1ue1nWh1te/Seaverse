@@ -34,3 +34,4 @@ NEW_COMMIT_MSG="$EMOJI $COMMIT_MSG"
 
 # 将更新后的提交信息写回文件
 echo "$NEW_COMMIT_MSG" > $COMMIT_MSG_FILE
+#
