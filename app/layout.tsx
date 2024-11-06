@@ -7,12 +7,12 @@ export const metadata = metadataInfo;
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>
+      <body className="gradient-background">
         {children}
         <Analytics />
         <SpeedInsights />

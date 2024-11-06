@@ -13,9 +13,17 @@ export const profileInfo = {
   labels: ["Web3 🌊", "全栈开发者 🪼", "智能合约工程师 🔱"],
   mottos: [
     "知行合一，宁静致远。",
-    "放弃幻想，准备战斗。",
+    "路在人走，事在人为。",
+    "英雄不问出处，富贵当思原由。",
+    "路上见识世界，途中认清自己。",
+    "莫忘少年凌云志，曾许天下第一流。",
+    "心诚才能交善友，品正才会遇贵人。",
+    "别让怯弱否定了自我，别让懒惰耽误了青春。",
+    "我可能会因激进而犯错，但绝不会因胆怯而畏惧。",
     "最慢的步伐不是跬步，而是徘徊。",
     "最快的步伐不是冲刺，而是坚持。",
+    "宠辱不惊，闲看庭前花开花落。",
+    "去留无意，漫随天外云卷云舒。",
   ],
   socialLinks: {
     github: "https://github.com/B1ue1nWh1te",
@@ -29,7 +37,7 @@ export const projectsInfo = {
   SeaEye: {
     logoPath: "/seaeye.svg",
     name: "SeaEye 深海之眼",
-    description: "博客网站",
+    description: "个人博客网站",
     website: "https://www.seaeye.cn/",
     github: "https://github.com/B1ue1nWh1te/SeaEye",
   },

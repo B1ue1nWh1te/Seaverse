@@ -7,7 +7,7 @@ import { Github, Globe } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="mx-8 my-6 flex flex-wrap justify-between gap-8">
+    <div className="mt-4 flex flex-wrap items-center justify-center gap-8">
       {Object.values(projectsInfo).map((project, index) => (
         <motion.div key={index} whileHover={{ scale: 1.1 }}>
           <Card
@@ -18,7 +18,7 @@ export default function Projects() {
               project.website && window.open(project.website, "_blank")
             }
           >
-            <div className="relative flex h-full flex-col items-center justify-center gap-4">
+            <div className="relative flex h-full w-full flex-col items-center justify-center gap-4">
               <div className="flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:-translate-y-4">
                 <Image
                   src={project.logoPath}
@@ -30,9 +30,7 @@ export default function Projects() {
                 <h2 className="text-lg font-semibold text-gray-800">
                   {project.name}
                 </h2>
-                <p className="pointer-events-none text-sm text-gray-600">
-                  {project.description}
-                </p>
+                <p className="text-sm text-gray-600">{project.description}</p>
               </div>
               {(project.website || project.github) && (
                 <div className="absolute bottom-0 flex justify-center space-x-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

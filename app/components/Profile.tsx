@@ -66,7 +66,7 @@ export default function Profile() {
 
   return (
     <Card
-      className="mx-4 my-6 flex flex-1 select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg"
+      className="mb-4 flex min-w-[500px] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
       isBlurred={true}
       isPressable={true}
       onPress={showConfetti}
@@ -77,17 +77,17 @@ export default function Profile() {
           alt="portrait"
           width={120}
           height={120}
-          className="select-none rounded-full border-2 border-gray-300 shadow-large"
+          className="rounded-full border-2 border-gray-300 shadow-large"
           draggable={false}
         />
-        <h1 className="select-none text-2xl font-bold text-gray-600">
+        <h1 className="text-2xl font-bold text-gray-600">
           {profileInfo.nickname}
         </h1>
-        <div className="flex items-center justify-center space-x-1">
+        <div className="flex items-center justify-center space-x-3">
           {profileInfo.labels.map((label, index) => (
             <AnimatedGradientText key={label}>
               <p
-                className="animate-gradient-left-to-right inline bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
+                className="inline bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${LABELS_GRADIENT_COLORS[index].from}, ${LABELS_GRADIENT_COLORS[index].via}, ${LABELS_GRADIENT_COLORS[index].to})`,
                 }}
@@ -97,7 +97,7 @@ export default function Profile() {
             </AnimatedGradientText>
           ))}
         </div>
-        <p className="h-8 select-none bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg text-transparent">
+        <p className="h-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg text-transparent">
           {typedText}
         </p>
         <SocialLinksDock />

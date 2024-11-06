@@ -5,7 +5,16 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const TooltipProvider = TooltipPrimitive.Provider;
+const TooltipProvider = ({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+} & TooltipPrimitive.TooltipProviderProps) => (
+  <TooltipPrimitive.Provider delayDuration={0} {...props}>
+    {children}
+  </TooltipPrimitive.Provider>
+);
 
 const Tooltip = TooltipPrimitive.Root;
 
