@@ -60,7 +60,7 @@ export default function ProjectsBeam() {
 
   return (
     <Card
-      className="mb-4 flex min-w-[500px] flex-[3] select-none items-center justify-center bg-background px-14 py-12 transition-all duration-300 hover:shadow-lg hover:shadow-[#4facfe]/25 hover:ring-2 hover:ring-[#4facfe]/50"
+      className="flex min-w-[460px] flex-[3] select-none items-center justify-center px-14 py-12 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#4facfe]/25 hover:ring-2 hover:ring-[#4facfe]/50"
       ref={containerRef}
       isBlurred={true}
       isPressable={true}

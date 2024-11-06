@@ -7,11 +7,11 @@ import { Github, Globe } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="mt-4 flex flex-wrap items-center justify-center gap-8">
+    <div className="flex min-w-[570px] flex-wrap items-center justify-center gap-8">
       {Object.values(projectsInfo).map((project, index) => (
         <motion.div key={index} whileHover={{ scale: 1.1 }}>
           <Card
-            className="group flex h-60 w-60 select-none items-center justify-center bg-white/80 p-6 backdrop-blur-lg"
+            className="group flex h-60 w-60 select-none items-center justify-center p-6 backdrop-blur-lg"
             isBlurred={true}
             isPressable={true}
             onPress={() =>
