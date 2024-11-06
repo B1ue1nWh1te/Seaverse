@@ -29,7 +29,7 @@ export default function Home() {
       <main className="h-screen w-screen overflow-y-auto overflow-x-hidden">
         <div
           className={cn(
-            "flex flex-col items-center justify-center gap-8 p-4",
+            "flex flex-col items-center justify-center p-4",
             isLargeScreen ? "h-screen" : "min-h-screen",
           )}
         >
