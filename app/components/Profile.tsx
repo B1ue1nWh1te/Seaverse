@@ -66,7 +66,7 @@ export default function Profile() {
 
   return (
     <Card
-      className="flex min-w-[26rem] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
+      className="flex min-w-[24rem] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
       isBlurred={true}
       isPressable={true}
       onPress={showConfetti}
@@ -83,11 +83,11 @@ export default function Profile() {
         <h1 className="text-2xl font-bold text-gray-600">
           {profileInfo.nickname}
         </h1>
-        <div className="flex items-center justify-center space-x-3">
+        <div className="flex flex-col items-center justify-center space-y-3 md:flex-row md:space-x-3 md:space-y-0">
           {profileInfo.labels.map((label, index) => (
             <AnimatedGradientText key={label}>
               <p
-                className="inline bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
+                className="inline whitespace-nowrap bg-gradient-to-r bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${LABELS_GRADIENT_COLORS[index].from}, ${LABELS_GRADIENT_COLORS[index].via}, ${LABELS_GRADIENT_COLORS[index].to})`,
                 }}
