@@ -66,7 +66,7 @@ export default function Profile() {
 
   return (
     <Card
-      className="flex min-w-[460px] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
+      className="flex min-w-[26rem] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
       isBlurred={true}
       isPressable={true}
       onPress={showConfetti}

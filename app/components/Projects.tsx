@@ -7,7 +7,7 @@ import { Github, Globe } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="flex min-w-[570px] flex-wrap items-center justify-center gap-8">
+    <div className="flex flex-wrap items-center justify-center gap-8">
       {Object.values(projectsInfo).map((project, index) => (
         <motion.div key={index} whileHover={{ scale: 1.1 }}>
           <Card
