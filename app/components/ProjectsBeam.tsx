@@ -12,45 +12,47 @@ import { projectsInfo } from "@/constants/info";
 import { cn, showConfetti } from "@/lib/utils";
 import { Card } from "@nextui-org/react";
 import Image from "next/image";
-import { forwardRef, useRef } from "react";
+import { forwardRef, memo, useRef } from "react";
 
-const Circle = forwardRef<
-  HTMLDivElement,
-  { className?: string; projectName: keyof typeof projectsInfo }
->(({ className, projectName }, ref) => {
-  const project = projectsInfo[projectName];
+const Circle = memo(
+  forwardRef<
+    HTMLDivElement,
+    { className?: string; projectName: keyof typeof projectsInfo }
+  >(({ className, projectName }, ref) => {
+    const project = projectsInfo[projectName];
 
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <div
-            ref={ref}
-            className={cn(
-              "z-10 flex size-16 cursor-pointer items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-110",
-              className,
-            )}
-          >
-            <Image
-              src={project.logoPath}
-              alt={project.name}
-              width={32}
-              height={32}
-              className="size-full object-contain"
-            />
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{project.name}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
-});
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div
+              ref={ref}
+              className={cn(
+                "z-10 flex size-16 cursor-pointer items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-110",
+                className,
+              )}
+            >
+              <Image
+                src={project.logoPath}
+                alt={project.name}
+                width={32}
+                height={32}
+                className="size-full object-contain"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{project.name}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  }),
+);
 
 Circle.displayName = "Circle";
 
-export default function ProjectsBeam() {
+const ProjectsBeam = memo(function ProjectsBeam() {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftTopRef = useRef<HTMLDivElement>(null);
   const leftBottomRef = useRef<HTMLDivElement>(null);
@@ -122,4 +124,8 @@ export default function ProjectsBeam() {
       <Ripple mainCircleSize={120} mainCircleOpacity={0.3} numCircles={2} />
     </Card>
   );
-}
+});
+
+ProjectsBeam.displayName = "ProjectsBeam";
+
+export default ProjectsBeam;
