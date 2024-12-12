@@ -60,13 +60,13 @@ export const projectsInfo = {
     name: "Tsunami 海啸",
     description: "安全研究存档",
     website: "https://tsunami.seaeye.cn/",
-    github: "https://github.com/B1ue1nWh1te/Tsunami",
+    github: "https://github.com/B1ue1nWh1te/Tsunami/tree/main/tsunami",
   },
   Seaverse: {
     logoPath: "/seaverse.svg",
     name: "Seaverse 海域",
     description: "联动中心枢纽",
     website: "https://seaverse.seaeye.cn/",
-    github: "https://github.com/B1ue1nWh1te/Seaverse",
+    github: "https://github.com/orgs/Project-Seaverse/repositories",
   },
 };
