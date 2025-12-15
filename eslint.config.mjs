@@ -11,6 +11,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  { ignores: [".next/", "node_modules/", "dist/", "build/"] },
   ...nextConfig,
   ...compat.extends(
     "plugin:@typescript-eslint/recommended-type-checked",
