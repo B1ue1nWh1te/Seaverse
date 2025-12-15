@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { profileInfo } from "@/constants/info";
 import { cn } from "@/lib/utils";
-import { Github, Send, SquareArrowOutUpRight, Twitter } from "lucide-react";
+import { Github, Send, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const SOCIAL_LINKS = Object.entries(profileInfo.socialLinks).map(
@@ -19,14 +19,12 @@ const SOCIAL_LINKS = Object.entries(profileInfo.socialLinks).map(
       github: Github,
       twitter: Twitter,
       telegram: Send,
-      mirror: SquareArrowOutUpRight,
     };
 
     const names = {
       github: "GitHub",
       twitter: "X (Twitter)",
       telegram: "Telegram",
-      mirror: "Mirror",
     };
 
     return {

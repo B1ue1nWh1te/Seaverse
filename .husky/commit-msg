@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 # 读取提交信息文件的路径
 COMMIT_MSG_FILE="$1"
 

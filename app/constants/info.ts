@@ -16,14 +16,14 @@ export const profileInfo = {
     "知行合一，宁静致远。",
     "最慢的步伐不是跬步，而是徘徊。",
     "最快的步伐不是冲刺，而是坚持。",
-    "英雄不问出处，富贵当思原由。",
     "想看到天明，就要勇闯夜寂。",
+    "文韬武略兼备，方可破敌如破竹。",
+    "莫忘少年凌云志，曾许天下第一流。",
   ],
   socialLinks: {
     github: "https://github.com/B1ue1nWh1te",
     twitter: "https://x.com/RealB1ue1nWh1te",
     telegram: "https://t.me/b1ue1nwh1te",
-    mirror: "https://mirror.xyz/b1ue1nwh1te.eth",
   },
 };
 
