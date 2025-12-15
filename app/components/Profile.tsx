@@ -4,6 +4,7 @@ import { SocialLinksDock } from "@/components/SocialLinksDock";
 import { profileInfo } from "@/constants/info";
 import { showConfetti } from "@/lib/utils";
 import { Card, Image } from "@heroui/react";
+import NextImage from "next/image";
 import { memo, useEffect, useState } from "react";
 
 const Labels = memo(function Labels() {
@@ -77,7 +78,7 @@ const TypingText = memo(function TypingText() {
     const switchInterval = setInterval(() => {
       setCurrentMottoIndex((prev) => (prev + 1) % profileInfo.mottos.length);
       i = 0;
-    }, 6000);
+    }, 5000);
 
     return () => {
       clearInterval(switchInterval);
@@ -104,6 +105,7 @@ const Profile = memo(function Profile() {
     >
       <div className="flex flex-col items-center justify-center space-y-6">
         <Image
+          as={NextImage}
           src={profileInfo.portraitPath}
           alt="portrait"
           width={120}

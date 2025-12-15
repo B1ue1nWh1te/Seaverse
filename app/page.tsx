@@ -1,7 +1,3 @@
-"use client";
-
-import { HeroUIProvider } from "@heroui/react";
-import { useEffect, useState } from "react";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
 import ProjectsBeam from "./components/ProjectsBeam";
@@ -9,45 +5,28 @@ import BlurFade from "./components/ui/blur-fade";
 import { cn } from "./lib/utils";
 
 export default function Home() {
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      const isLarge = window.innerWidth >= 1400;
-      if (isLarge !== isLargeScreen) {
-        setIsLargeScreen(isLarge);
-      }
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, [isLargeScreen]);
-
   return (
-    <HeroUIProvider>
-      <main className="h-screen w-screen overflow-x-hidden overflow-y-auto">
-        <div
-          className={cn(
-            "flex flex-col items-center justify-center p-4",
-            isLargeScreen ? "h-screen" : "min-h-screen",
-          )}
-        >
-          <div className="grid gap-8">
-            <BlurFade delay={0.2}>
-              <div className="flex flex-wrap items-stretch justify-center gap-8">
-                <Profile />
-                <ProjectsBeam />
-              </div>
-            </BlurFade>
-            <BlurFade delay={0.4}>
-              <div className="flex items-center justify-center">
-                <Projects />
-              </div>
-            </BlurFade>
-          </div>
+    <main className="h-screen w-screen overflow-x-hidden overflow-y-auto">
+      <div
+        className={cn(
+          "flex flex-col items-center justify-center p-4",
+          "min-h-screen min-[1400px]:h-screen",
+        )}
+      >
+        <div className="grid gap-8">
+          <BlurFade delay={0.2}>
+            <div className="flex flex-wrap items-stretch justify-center gap-8">
+              <Profile />
+              <ProjectsBeam />
+            </div>
+          </BlurFade>
+          <BlurFade delay={0.4}>
+            <div className="flex items-center justify-center">
+              <Projects />
+            </div>
+          </BlurFade>
         </div>
-      </main>
-    </HeroUIProvider>
+      </div>
+    </main>
   );
 }

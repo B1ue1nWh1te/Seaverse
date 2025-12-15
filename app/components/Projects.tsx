@@ -4,6 +4,7 @@ import { projectsInfo } from "@/constants/info";
 import { Card, Image, Link } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
+import NextImage from "next/image";
 
 export default function Projects() {
   return (
@@ -21,6 +22,7 @@ export default function Projects() {
             <div className="relative flex h-full w-full flex-col items-center justify-center gap-4">
               <div className="flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:-translate-y-4">
                 <Image
+                  as={NextImage}
                   src={project.logoPath}
                   alt={`${project.name} Logo`}
                   width={60}
@@ -36,12 +38,12 @@ export default function Projects() {
                 <div className="absolute bottom-0 flex justify-center space-x-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   {project.website && (
                     <Link href={project.website} target="_blank">
-                      <Globe className="text-gray-600 hover:text-gray-900" />
+                      <Globe className="text-gray-500 transition-colors duration-300 hover:text-black" />
                     </Link>
                   )}
                   {project.github && (
                     <Link href={project.github} target="_blank">
-                      <Github className="text-gray-600 hover:text-gray-900" />
+                      <Github className="text-gray-500 transition-colors duration-300 hover:text-black" />
                     </Link>
                   )}
                 </div>

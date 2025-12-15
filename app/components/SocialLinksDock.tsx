@@ -23,7 +23,7 @@ const SOCIAL_LINKS = Object.entries(profileInfo.socialLinks).map(
 
     const names = {
       github: "GitHub",
-      twitter: "X (Twitter)",
+      twitter: "Twitter (X)",
       telegram: "Telegram",
     };
 
