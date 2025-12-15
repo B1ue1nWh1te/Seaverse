@@ -1,7 +1,7 @@
 "use client";
 
 import { projectsInfo } from "@/constants/info";
-import { Card, Image, Link } from "@nextui-org/react";
+import { Card, Image, Link } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 
@@ -11,7 +11,7 @@ export default function Projects() {
       {Object.values(projectsInfo).map((project, index) => (
         <motion.div key={index} whileHover={{ scale: 1.1 }}>
           <Card
-            className="group flex h-60 w-60 select-none items-center justify-center p-6 backdrop-blur-lg"
+            className="group flex h-60 w-60 items-center justify-center p-6 backdrop-blur-lg select-none"
             isBlurred={true}
             isPressable={true}
             onPress={() =>

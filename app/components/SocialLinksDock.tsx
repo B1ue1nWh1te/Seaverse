@@ -41,7 +41,7 @@ export function SocialLinksDock() {
   return (
     <TooltipProvider>
       <Dock
-        className="rounded-full bg-white/60 p-2 backdrop-blur-lg"
+        className="mt-0 rounded-full bg-white/60 p-2 backdrop-blur-lg"
         magnification={50}
         direction="middle"
       >

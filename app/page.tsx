@@ -1,6 +1,6 @@
 "use client";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { useEffect, useState } from "react";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
@@ -25,8 +25,8 @@ export default function Home() {
   }, [isLargeScreen]);
 
   return (
-    <NextUIProvider>
-      <main className="h-screen w-screen overflow-y-auto overflow-x-hidden">
+    <HeroUIProvider>
+      <main className="h-screen w-screen overflow-x-hidden overflow-y-auto">
         <div
           className={cn(
             "flex flex-col items-center justify-center p-4",
@@ -48,6 +48,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }

@@ -3,7 +3,7 @@
 import { SocialLinksDock } from "@/components/SocialLinksDock";
 import { profileInfo } from "@/constants/info";
 import { showConfetti } from "@/lib/utils";
-import { Card, Image } from "@nextui-org/react";
+import { Card, Image } from "@heroui/react";
 import { memo, useEffect, useState } from "react";
 
 const Labels = memo(function Labels() {
@@ -26,7 +26,7 @@ const Labels = memo(function Labels() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-3 md:flex-row md:space-x-2 md:space-y-0">
+    <div className="flex flex-col items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-2">
       {profileInfo.labels.map((label, index) => (
         <div key={label} className="relative rounded-full">
           <div
@@ -43,7 +43,7 @@ const Labels = memo(function Labels() {
             }}
           />
           <p
-            className="relative inline-block whitespace-nowrap bg-gradient-to-l bg-[length:var(--bg-size)_100%] bg-clip-text px-3 text-transparent"
+            className="relative inline-block bg-gradient-to-l bg-[length:var(--bg-size)_100%] bg-clip-text px-3 whitespace-nowrap text-transparent"
             style={{
               backgroundImage: `linear-gradient(to left, ${LABELS_GRADIENT_COLORS[index].from}, ${LABELS_GRADIENT_COLORS[index].via}, ${LABELS_GRADIENT_COLORS[index].to})`,
             }}
@@ -97,7 +97,7 @@ TypingText.displayName = "TypingText";
 const Profile = memo(function Profile() {
   return (
     <Card
-      className="flex min-w-[24rem] flex-[2] select-none items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#a78bfa]/25 hover:ring-2 hover:ring-[#a78bfa]/50"
+      className="flex min-w-[24rem] flex-[2] items-center justify-center bg-white/60 p-6 backdrop-blur-lg transition-all duration-300 select-none hover:shadow-lg hover:ring-2 hover:shadow-[#a78bfa]/25 hover:ring-[#a78bfa]/50"
       isBlurred={true}
       isPressable={true}
       onPress={showConfetti}
@@ -108,7 +108,7 @@ const Profile = memo(function Profile() {
           alt="portrait"
           width={120}
           height={120}
-          className="rounded-full border-2 border-gray-300 shadow-large"
+          className="shadow-large rounded-full border-2 border-gray-300"
           draggable={false}
         />
         <h1 className="text-2xl font-bold text-gray-600">

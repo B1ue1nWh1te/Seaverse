@@ -1,6 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "./hero";
+@plugin "tailwindcss-animate";
+
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-border-beam: border-beam calc(var(--duration) * 1s) infinite linear;
+  --animate-shine: shine var(--duration) infinite linear;
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
+    infinite;
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes border-beam {
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+
+  @keyframes ripple {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+
+  @keyframes gradient {
+    to {
+      backgroundposition: var(--bg-size) 0;
+    }
+  }
+}
 
 @layer base {
   :root {
@@ -23,7 +74,8 @@
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 50% 50%,
       rgba(147, 197, 253, 0.2) 0%,
       transparent 70%

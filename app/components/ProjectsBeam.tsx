@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { projectsInfo } from "@/constants/info";
 import { cn, showConfetti } from "@/lib/utils";
-import { Card } from "@nextui-org/react";
+import { Card } from "@heroui/react";
 import Image from "next/image";
 import { forwardRef, memo, useRef } from "react";
 
@@ -28,7 +28,7 @@ const Circle = memo(
             <div
               ref={ref}
               className={cn(
-                "z-10 flex size-16 cursor-pointer items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-110",
+                "z-10 flex size-16 cursor-pointer items-center justify-center rounded-full border-2 border-gray-100 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] transition-transform hover:scale-110",
                 className,
               )}
             >
@@ -62,7 +62,7 @@ const ProjectsBeam = memo(function ProjectsBeam() {
 
   return (
     <Card
-      className="flex min-w-[24rem] flex-[3] select-none items-center justify-center px-14 py-12 backdrop-blur-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#4facfe]/25 hover:ring-2 hover:ring-[#4facfe]/50"
+      className="flex min-w-[24rem] flex-[3] items-center justify-center px-14 py-12 backdrop-blur-lg transition-all duration-300 select-none hover:shadow-lg hover:ring-2 hover:shadow-[#4facfe]/25 hover:ring-[#4facfe]/50"
       ref={containerRef}
       isBlurred={true}
       isPressable={true}
@@ -70,7 +70,7 @@ const ProjectsBeam = memo(function ProjectsBeam() {
     >
       <Circle
         ref={middleRef}
-        className="absolute left-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 size-16 -translate-x-1/2 -translate-y-1/2"
         projectName="Seaverse"
       />
       <div className="flex size-full flex-col items-stretch justify-between">
