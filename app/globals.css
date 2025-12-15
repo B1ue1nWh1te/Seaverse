@@ -48,7 +48,7 @@
 
   @keyframes gradient {
     to {
-      backgroundposition: var(--bg-size) 0;
+      background-position: var(--bg-size) 0;
     }
   }
 }
